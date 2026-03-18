@@ -2,15 +2,23 @@ package singleton;
 
 public class DBConnection {
 
+    private static DBConnection instancia;
+
     private String connectionString;
 
-    public DBConnection(String connectionString) {
+    private DBConnection(String connectionString) {
         this.connectionString = connectionString;
     }
 
-    public void connect() throws InterruptedException {
-        System.out.println("Connecting to " + this.connectionString);
-        Thread.sleep(1000);
-        System.out.println("Connected!!");
+    public static DBConnection getInstancia(String connectionString){
+        if (instancia == null){
+            instancia = new DBConnection(connectionString);
+        }
+        return instancia;
+    
+    }
+
+    public void connect() {
+        System.out.println("Connectando ao banco: " + this.connectionString);
     }
 }

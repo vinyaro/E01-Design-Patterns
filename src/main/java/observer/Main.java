@@ -15,4 +15,3 @@ public class Main {
         sensorTemp.setTemperatura(100);
     }
 }
-

@@ -4,10 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Ingrediente produto = new Pao(new Pao());
+        Ingrediente Pedido = new Pao();
 
-        System.out.println(produto.imprimeIngrediente());
-        System.out.println(produto.valorDoIngrediente());
+        Pedido = new Bacon(Pedido);
+        Pedido = new Queijo(Pedido);
+        Pedido = new Ketchup(Pedido);
+        Pedido = new Salada(Pedido);
 
+        System.out.println("Itens do pedido: " + Pedido.imprimeIngrediente());
+        System.out.println("Valor total: R$ " + Pedido.valorDoIngrediente());
     }
 }
